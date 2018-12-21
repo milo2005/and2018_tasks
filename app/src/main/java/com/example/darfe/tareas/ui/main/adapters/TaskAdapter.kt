@@ -12,7 +12,11 @@ import java.util.*
 
 class TaskAdapter: RecyclerView.Adapter<TaskViewHolder>(){
 
-    val data:List<Task> = emptyList()
+    var data:List<Task> = emptyList()
+        set(value){
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view:View = LayoutInflater.from(parent.context)
