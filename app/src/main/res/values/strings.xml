@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Tareas</string>
+    <string-array name="categories">
+        <item>Urgente</item>
+        <item>Importante</item>
+        <item>Trabajo</item>
+        <item>Casa</item>
+    </string-array>
+
 </resources>

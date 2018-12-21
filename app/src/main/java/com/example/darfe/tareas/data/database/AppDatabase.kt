@@ -9,9 +9,11 @@ import java.util.*
 object Converter{
 
     @TypeConverter
+    @JvmStatic
     fun dateToLong(date: Date):Long = date.time
 
     @TypeConverter
+    @JvmStatic
     fun longToDate(timestamp:Long):Date = Date(timestamp)
 
 }
