@@ -8,4 +8,5 @@ import java.util.*
 class Task(@PrimaryKey(autoGenerate = true) val id:Long? = null,
            val title:String,
            val description:String,
+           val category:String,
            val date:Date)

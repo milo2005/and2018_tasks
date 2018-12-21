@@ -22,4 +22,11 @@ interface TaskDao {
     @Query("SELECT * FROM task ORDER BY date DESC")
     fun all(): LiveData<List<Task>>
 
+    @Query("SELECT * FROM task WHERE title LIKE :title")
+    fun findByTitle(title:String):LiveData<List<Task>>
+
+    @Query("SELECT * FROM task WHERE category = :category")
+    fun findByCategory(category:String):LiveData<List<Task>>
+
+
 }
