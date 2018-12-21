@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Tareas</string>
+    <string name="name">Titulo</string>
+    <string name="description">Descripción</string>
+    <string name="cancel">Cancelar</string>
+    <string name="ok">Aceptar</string>
     <string-array name="categories">
         <item>Urgente</item>
         <item>Importante</item>
@@ -7,4 +11,9 @@
         <item>Casa</item>
     </string-array>
 
+    <string name="add_task">Agregar Tarea</string>
+    <string name="edit_task">Editar Tarea</string>
+    <string name="action_search">Buscar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_remove">Eliminar</string>
 </resources>
