@@ -16,4 +16,5 @@
     <string name="action_search">Buscar</string>
     <string name="action_edit">Editar</string>
     <string name="action_remove">Eliminar</string>
+    <string name="filter">Filtrar</string>
 </resources>

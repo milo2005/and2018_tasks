@@ -32,6 +32,7 @@ class AddActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         finish()
         return super.onOptionsItemSelected(item)
+
     }
 
     override fun onResume() {
