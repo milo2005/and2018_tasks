@@ -6,9 +6,7 @@ import com.example.darfe.tareas.data.database.dao.TaskDao
 import com.example.darfe.tareas.data.database.model.Task
 import kotlin.concurrent.thread
 
-class AddViewModel:ViewModel(){
-
-    private val dao:TaskDao = AppDatabase.db.taskDao()
+class AddViewModel(private val dao:TaskDao):ViewModel(){
 
     fun add(task: Task){
         thread(true) { dao.insert(task) }

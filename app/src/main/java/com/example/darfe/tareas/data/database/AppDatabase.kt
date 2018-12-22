@@ -24,15 +24,4 @@ abstract class AppDatabase : RoomDatabase() {
 
     abstract fun taskDao(): TaskDao
 
-    companion object {
-        lateinit var db: AppDatabase
-        fun init(context: Context) {
-            db = Room.databaseBuilder(
-                context,
-                AppDatabase::class.java, "task.db"
-            )
-                .build()
-        }
-    }
-
 }

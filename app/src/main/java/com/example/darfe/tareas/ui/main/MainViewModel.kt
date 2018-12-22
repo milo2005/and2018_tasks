@@ -5,9 +5,8 @@ import com.example.darfe.tareas.data.database.AppDatabase
 import com.example.darfe.tareas.data.database.dao.TaskDao
 import com.example.darfe.tareas.data.database.model.Task
 
-class MainViewModel:ViewModel(){
+class MainViewModel(private val dao:TaskDao):ViewModel(){
 
-    private val dao: TaskDao = AppDatabase.db.taskDao()
     private val filterLD: MutableLiveData<String> = MutableLiveData()
     private val searchLD: MutableLiveData<String> = MutableLiveData()
 
