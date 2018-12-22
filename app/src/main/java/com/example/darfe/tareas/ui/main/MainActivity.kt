@@ -1,13 +1,14 @@
 package com.example.darfe.tareas.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.darfe.tareas.R
+import com.example.darfe.tareas.ui.add.AddActivity
 import com.example.darfe.tareas.ui.main.adapters.TaskAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.template_task.view.*
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,5 +32,7 @@ class MainActivity : AppCompatActivity() {
         vm.tasks.observe(this, Observer { adapter.data = it })
 
         filter.setOnItemClickListener{_, _, pos,_-> vm.filter(categories[pos])  }
+
+        btnAdd.setOnClickListener { startActivity<AddActivity>() }
     }
 }
