@@ -2,15 +2,18 @@ package com.example.darfe.tareas.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.darfe.tareas.R
 import com.example.darfe.tareas.data.database.AppDatabase
-import com.example.darfe.tareas.data.database.model.Task
 import com.example.darfe.tareas.data.preference.UserSession
+import com.example.darfe.tareas.ui.add.AddViewModel
+import com.example.darfe.tareas.ui.login.LoginViewModel
+import com.example.darfe.tareas.ui.main.MainViewModel
+import kotlinx.android.synthetic.main.activity_add.*
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.experimental.builder.viewModel
 import org.koin.dsl.module.Module
 import org.koin.dsl.module.module
-import org.koin.experimental.builder.scope
 import org.koin.experimental.builder.single
-import java.util.*
 
 val appModule: Module = module {
 
@@ -34,6 +37,14 @@ val appModule: Module = module {
 
     // single{ UserSession(get()) }
     single<UserSession>()
+
+    viewModel<AddViewModel>()
+    viewModel<LoginViewModel>()
+    viewModel<MainViewModel>()
+
+    single {
+        androidContext().resources.getStringArray(R.array.categories)
+    }
 
 
     /*single { Task(null, "", "", "", Date()) }

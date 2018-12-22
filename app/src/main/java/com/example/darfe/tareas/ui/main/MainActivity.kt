@@ -12,16 +12,14 @@ import com.example.darfe.tareas.ui.main.adapters.TaskAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-    val vm:MainViewModel by lazy{ ViewModelProviders.of(this)
-        .get(MainViewModel::class.java)}
-
+    val vm:MainViewModel by viewModel()
     val adapter:TaskAdapter = TaskAdapter()
-
-    val categories:Array<String>
-            by lazy { resources.getStringArray(R.array.categories) }
+    val categories:Array<String> by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

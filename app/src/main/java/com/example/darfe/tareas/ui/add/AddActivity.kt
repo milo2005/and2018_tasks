@@ -9,17 +9,14 @@ import com.example.darfe.tareas.data.database.model.Task
 import com.example.darfe.tareas.util.text
 import kotlinx.android.synthetic.main.activity_add.*
 import org.jetbrains.anko.toast
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
 class AddActivity : AppCompatActivity() {
 
-    val vm: AddViewModel by lazy {
-        ViewModelProviders.of(this)
-            .get(AddViewModel::class.java)
-    }
-
-    val categoryNames:Array<String>
-            by lazy{ resources.getStringArray(R.array.categories)}
+    val vm: AddViewModel by viewModel()
+    val categoryNames:Array<String> by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

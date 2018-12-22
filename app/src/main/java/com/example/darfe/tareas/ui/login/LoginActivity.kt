@@ -10,12 +10,11 @@ import com.example.darfe.tareas.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
 
-    val vm:LoginViewModel by lazy { ViewModelProviders.of(this)
-        .get(LoginViewModel::class.java)
-    }
+    val vm:LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
